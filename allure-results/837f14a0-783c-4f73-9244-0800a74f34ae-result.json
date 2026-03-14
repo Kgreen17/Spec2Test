@@ -1,0 +1,25 @@
+{
+  "uid": "837f14a0-783c-4f73-9244-0800a74f34ae",
+  "name": "step-3 submit DESCRIBE_TARGET",
+  "fullName": "step-3 submit DESCRIBE_TARGET",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773496469776,
+  "stop": 1773496469777
+}

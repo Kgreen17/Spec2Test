@@ -1,0 +1,31 @@
+{
+  "uid": "7505513d-8844-4d53-896b-22bed10a72f0",
+  "name": "step-4 assert text=Wikipedia",
+  "fullName": "step-4 assert text=Wikipedia",
+  "status": "failed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [
+    {
+      "source": "7505513d-8844-4d53-896b-22bed10a72f0-attachment.png",
+      "type": "image/png",
+      "name": "screenshot"
+    }
+  ],
+  "start": 1773496469777,
+  "stop": 1773496469778
+}

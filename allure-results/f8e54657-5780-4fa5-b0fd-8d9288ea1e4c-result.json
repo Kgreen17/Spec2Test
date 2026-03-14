@@ -1,0 +1,25 @@
+{
+  "uid": "f8e54657-5780-4fa5-b0fd-8d9288ea1e4c",
+  "name": "step-20 describe_action DESCRIBE_TARGET",
+  "fullName": "step-20 describe_action DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773493669043,
+  "stop": 1773493669044
+}

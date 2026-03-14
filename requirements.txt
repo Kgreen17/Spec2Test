@@ -1,0 +1,12 @@
+# Minimal example requirements for the AI UI testing agent
+langchain
+llama-index
+openai
+playwright
+chromadb
+pydantic
+fastapi
+uvicorn
+pytest
+allure-pytest
+

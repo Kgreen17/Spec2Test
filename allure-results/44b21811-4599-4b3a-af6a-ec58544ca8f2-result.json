@@ -1,0 +1,25 @@
+{
+  "uid": "44b21811-4599-4b3a-af6a-ec58544ca8f2",
+  "name": "step-1 navigate https://www.google.com/",
+  "fullName": "step-1 navigate https://www.google.com/",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773496469776,
+  "stop": 1773496469777
+}

@@ -1,0 +1,97 @@
+{
+  "test_name": "Google Search - Top Cities in USA",
+  "description": "Search for the biggest cities in the USA on Google",
+  "metadata": null,
+  "steps": [
+    {
+      "id": 1,
+      "action": "navigate",
+      "target": "https://www.google.com/",
+      "value": null,
+      "expected": null,
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "target": "input[name=q]",
+      "value": "biggest cities in the USA",
+      "expected": null,
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 3,
+      "action": "submit",
+      "target": "input[name=q]",
+      "value": null,
+      "expected": null,
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 4,
+      "action": "assert",
+      "target": "text=Wikipedia",
+      "value": null,
+      "expected": "Wikipedia",
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 5,
+      "action": "assert",
+      "target": "text=World population review",
+      "value": null,
+      "expected": "World population review",
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 6,
+      "action": "assert",
+      "target": "text=Britannica",
+      "value": null,
+      "expected": "Britannica",
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 7,
+      "action": "assert",
+      "target": "text=NYC.gov",
+      "value": null,
+      "expected": "NYC.gov",
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 8,
+      "action": "click",
+      "target": "text=Wikipedia",
+      "value": null,
+      "expected": null,
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    },
+    {
+      "id": 9,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "value": null,
+      "expected": "List of cities in the USA based on population",
+      "retries": 0,
+      "timeout_seconds": null,
+      "metadata": null
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "44a7e968-7154-4dce-9124-3cdc919cbf9e",
+  "name": "step-3 submit text=submit",
+  "fullName": "step-3 submit text=submit",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773495574732,
+  "stop": 1773495574733
+}

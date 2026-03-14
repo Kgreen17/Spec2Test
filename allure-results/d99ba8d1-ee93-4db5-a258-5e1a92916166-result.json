@@ -1,0 +1,31 @@
+{
+  "uid": "d99ba8d1-ee93-4db5-a258-5e1a92916166",
+  "name": "step-7 assert text=NYC.gov",
+  "fullName": "step-7 assert text=NYC.gov",
+  "status": "failed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [
+    {
+      "source": "d99ba8d1-ee93-4db5-a258-5e1a92916166-attachment.png",
+      "type": "image/png",
+      "name": "screenshot"
+    }
+  ],
+  "start": 1773496469782,
+  "stop": 1773496469783
+}

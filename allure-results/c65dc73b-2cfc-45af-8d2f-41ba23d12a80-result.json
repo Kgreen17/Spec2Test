@@ -1,0 +1,25 @@
+{
+  "uid": "c65dc73b-2cfc-45af-8d2f-41ba23d12a80",
+  "name": "step-18 describe_action DESCRIBE_TARGET",
+  "fullName": "step-18 describe_action DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773493669042,
+  "stop": 1773493669043
+}

@@ -1,0 +1,31 @@
+{
+  "uid": "13d70279-d334-4bd7-a0e2-ce188105f38c",
+  "name": "step-6 assert text=Britannica",
+  "fullName": "step-6 assert text=Britannica",
+  "status": "failed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [
+    {
+      "source": "13d70279-d334-4bd7-a0e2-ce188105f38c-attachment.png",
+      "type": "image/png",
+      "name": "screenshot"
+    }
+  ],
+  "start": 1773495574735,
+  "stop": 1773495574736
+}

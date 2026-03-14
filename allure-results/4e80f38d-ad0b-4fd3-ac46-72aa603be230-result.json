@@ -1,0 +1,31 @@
+{
+  "uid": "4e80f38d-ad0b-4fd3-ac46-72aa603be230",
+  "name": "step-5 assert text=World population review",
+  "fullName": "step-5 assert text=World population review",
+  "status": "failed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [
+    {
+      "source": "4e80f38d-ad0b-4fd3-ac46-72aa603be230-attachment.png",
+      "type": "image/png",
+      "name": "screenshot"
+    }
+  ],
+  "start": 1773495574734,
+  "stop": 1773495574735
+}

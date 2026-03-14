@@ -1,0 +1,79 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "action": "navigate",
+      "target": "https://www.google.com/",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "target": "DESCRIBE_TARGET",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "id": 3,
+      "action": "submit",
+      "target": "DESCRIBE_TARGET",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "id": 4,
+      "action": "assert",
+      "target": "text=Wikipedia",
+      "status": "FAIL",
+      "error": "Assertion failed: expected 'Wikipedia' not found in target",
+      "screenshot": "reports/screenshots/step_4_fail.png"
+    },
+    {
+      "id": 5,
+      "action": "assert",
+      "target": "text=World population review",
+      "status": "FAIL",
+      "error": "Assertion failed: expected 'World population review' not found in target",
+      "screenshot": "reports/screenshots/step_5_fail.png"
+    },
+    {
+      "id": 6,
+      "action": "assert",
+      "target": "text=Britannica",
+      "status": "FAIL",
+      "error": "Assertion failed: expected 'Britannica' not found in target",
+      "screenshot": "reports/screenshots/step_6_fail.png"
+    },
+    {
+      "id": 7,
+      "action": "assert",
+      "target": "text=NYC.gov",
+      "status": "FAIL",
+      "error": "Assertion failed: expected 'NYC.gov' not found in target",
+      "screenshot": "reports/screenshots/step_7_fail.png"
+    },
+    {
+      "id": 8,
+      "action": "click",
+      "target": "text=Wikipedia",
+      "status": "FAIL",
+      "error": "Playwright timeout: Page.click: Timeout 30000ms exceeded.\nCall log:\n  - waiting for locator(\"text=Wikipedia\")\n"
+    },
+    {
+      "id": 9,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "FAIL",
+      "error": "Assertion failed: expected 'List of cities in the USA based on population' not found in target",
+      "screenshot": "reports/screenshots/step_9_fail.png"
+    }
+  ],
+  "summary": {
+    "pass": 3,
+    "fail": 6,
+    "skipped": 0,
+    "warnings": 0,
+    "total": 9
+  }
+}

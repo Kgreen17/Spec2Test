@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "action": "navigate",
+      "target": "https://www.google.com/",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 2,
+      "action": "fill",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 3,
+      "action": "submit",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 4,
+      "action": "assert",
+      "target": "text=Wikipedia",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 5,
+      "action": "assert",
+      "target": "text=World population review",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 6,
+      "action": "assert",
+      "target": "text=Britannica",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 7,
+      "action": "assert",
+      "target": "text=NYC.gov",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 8,
+      "action": "click",
+      "target": "text=Wikipedia",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 9,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 10,
+      "action": "wait",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 11,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 12,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 13,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 14,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 15,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 16,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 17,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 18,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 19,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 20,
+      "action": "describe_action",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    }
+  ],
+  "summary": {
+    "pass": 6,
+    "fail": 0,
+    "skipped": 14,
+    "warnings": 0,
+    "total": 20
+  }
+}

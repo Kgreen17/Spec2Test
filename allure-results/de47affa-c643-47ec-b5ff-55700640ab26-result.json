@@ -1,0 +1,25 @@
+{
+  "uid": "de47affa-c643-47ec-b5ff-55700640ab26",
+  "name": "step-10 wait DESCRIBE_TARGET",
+  "fullName": "step-10 wait DESCRIBE_TARGET",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773493669038,
+  "stop": 1773493669039
+}

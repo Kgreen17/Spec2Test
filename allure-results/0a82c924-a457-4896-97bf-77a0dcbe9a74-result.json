@@ -1,0 +1,25 @@
+{
+  "uid": "0a82c924-a457-4896-97bf-77a0dcbe9a74",
+  "name": "step-2 fill DESCRIBE_TARGET",
+  "fullName": "step-2 fill DESCRIBE_TARGET",
+  "status": "failed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773493669029,
+  "stop": 1773493669030
+}

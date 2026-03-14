@@ -1,0 +1,117 @@
+{
+  "source": "/Users/kevingreen/PycharmProjects/Spec2Test/docs/WebGoat 5 Deployment Guide v0.1.pdf",
+  "chunk_size": 500,
+  "backend": "dummy",
+  "chunks": [
+    "  \n \n \n \n \n \n \n    \n \n                     \nAuthor: Vikas Johari  \nDate: 16 January 2020 \nDocument Version: v0.1  \n \n \n       WebGoat 5.0 Deployment \nGuide \n \n \nFortify SCA 19.x \n \n \nDeployment Guide  \n\n \n2 Contents  \nContents  ............................................................................................................................................................... 2 \nIntroduction  ......................................................................................................................................................... 3 \nEnvironment  ......................................................................................................................................................... 3 \nBuilding the war file  ............................................................................................................................................. 4 \nDeploying the war file  .......................................................................................................................................... 4 \nTesting the war file  ............................................................................................................................................... 5 \nTomcat Startup Logs  ............................................................................................................................................ 6 \nMicro Focus Trademark Information  ................................................................................................................... 8 \nCompany Details .................................................................................................................................................. 8 \n \n \n \n \n \n \n \n  \n \n \n \n\n \n3 Introduction  \nUsing the below steps, the sample code of WebGoat 5.0 can be deployed on tomcat and using WebInspect  a \nDAST",
+    "at 5.0 can be deployed on tomcat and using WebInspect  a \nDAST scan can be initiated. This will be a good application to configure offline and showcase Fortify features. \n \nFortify SCA comes with WebGoat 5.0 sample source code in  \n“C:\\Program Files\\Fortify\\Fortify_SCA_and_Apps_19.2.0\\Samples\\advanced\\webgoat ” folder.  \n \nThis document is written as step by step guide to build the war file and deploy on tomcat server on windows. \n \n \nEnvironment  \nI have used two Windows 2016 VMs to build and deploy. First machine is used to build the war file, the SCA \nmachine can be used  and second machine is used to deploy & test the war file.  \n \nBuild Machine  \n This machine will be the having the Build Tools installed and configured to build the war file, the SCA \nmachine can be used as well",
+    " Tools installed and configured to build the war file, the SCA \nmachine can be used as well.  \n \nOne Windows 2016 –  64 bit VM running SCA 19.2.0 along with JDK 1.8.0_212 and ANT 1.10.7.  \nMake sure environment variable JAVA_HOME is set to “C:\\ Program Files \\Java\\ jdk1.8.0_212” and \nANT_HOME is set to “C: \\apache-ant”  \n Assuming JDK 1.8.0_212 is installed on default location and ANT is extracted to “c: \\apache -ant”.  \n \nMake sure “C: \\Program Files \\Java\\ jdk1.8.0_212\\ bin” and “C: \\apache-ant \\bin” is added in PATH.  \n \nRuntime Machine  \nIn the machine WebGoat war file will be deployed.  \n \nA Windows 2016",
+    "  \nIn the machine WebGoat war file will be deployed.  \n \nA Windows 2016 –  64 bit VM along with –  \n \n \n• JDK 1.7.0_80 i586 (32bit edition) which can be downloaded from \nhttps://www.oracle.com/technetwork/java/javase/downloads/java-archive -downloads -javase7 -\n521261.html . It has to be ins talled on its default location i.e. C:\\ Program Files (x86) \\Java\\ jdk1.7.0_80.  \n Set the JAVA_HOME environment variable to “C:\\ Program Files (x86) \\Java\\ jdk1.7.0_80”.  \n \n• Download Tomcat 5.0.28 from https://archive.apache.org/dist/tomcat/tomcat -5/v5.0.28/bin/jakarta -\ntomcat-5.0.28.zip  and extract to “C: \\Tom",
+    "arta -\ntomcat-5.0.28.zip  and extract to “C: \\Tomcat5” folder. \n Start the tomcat using cmd, run startup.bat file in “C: \\Tomcat5 \\bin”. Validate using Chrome to \nconnect http://localhost:8080. Shutdown the tomcat using shutdown.bat file in “C: \\Tomcat5 \\bin”.  \n  \n \n\n \n4 Building the war file \nTo build the file open CMD and change the folder to “ C:\\Program \nFiles\\Fortify\\ Fortify_SCA_and_Apps_19.2.0\\ Samples\\ advanced\\ webgoat\\ WebGoat5.0 ” \nRun the command – \n \nant -Dant.build.javac.target=1.7 clean BuildWindowsWar \n \n \nIt will give few warnings but the build will be successful. It will generate the “WebGoat -5.0.war” file in \n“C:\\Program \nFiles\\F",
+    "WebGoat -5.0.war” file in \n“C:\\Program \nFiles\\Fortify\\Fortify_SCA_and_Apps_19.2.0\\Samples\\advanced\\webgoat\\WebGoat5.0\\dist\\ ” folder.  \n Rename the “WebGoat -5.0.war” file to “WebGoat.war”. Now the war file is ready to deploy.  \n \nDeploying the war file  \n \nCopy the WebGoat.war file in  runtime machine on C:\\Tomcat5\\ webapps folder and start tomcat. Validate \nthat the war file is extracted, and then shutdown the tomcat.  \n \nOpen C:\\Tomcat5\\ conf\\tomcat-users.xml in NotePad++, remove all its content and paste the below \nin it, then save the xml file.  \n \n<?xml version='1.0' encoding='utf-8'?> \n<tomcat-users> \n",
+    " version='1.0' encoding='utf-8'?> \n<tomcat-users> \n  <role rolename=\"webgoat_basic\"/> \n  <role rolename=\"manager\"/>   <role rolename=\"tomcat\"/> \n  <role rolename=\"manager-script\"/> \n  <role rolename=\"admin\"/> \n  <role rolename=\"admin-gui\"/>   <role rolename=\"manager-gui\"/>   <role rolename=\"webgoat_admin\"/> \n  <role rolename=\"webgoat_user\"/> \n  <user username=\"tomcat\" password=\"tomcat\" roles=\"admin,manager,tomcat,manager-gui,admin-gui,manager-script\"/> \n  <user username=\"webgoat\" password=\"webgoat\" roles=\"webgoat_admin\"/> \n  <user username=\"basic\" password=\"basic\" roles=\"webgoat_user,webgoat_basic\"/>   <user username=\"guest\"",
+    "\" roles=\"webgoat_user,webgoat_basic\"/>   <user username=\"guest\" password=\"guest\" roles=\"webgoat_user\"/> \n</tomcat-users> \n \n \nThis configuration change will create a few users –  \n \n• Username “tomcat” wit h the password “tomcat”, it will be used for accessing tomcat’s admin & \nmanager pages also will be used via Jenkins’s CD to deploy the war file remotely.  \n \n• Username “guest” with the password “guest” will be used in WebGoat application’s basic \nauthentication  popup to login as a normal user in WebGoat.  \n \n• Username “webgoat” with the password “webgoat” will be used in WebGoat application's basic \nauthentication popup to login as admin of WebGoat application.  \n \n• Username “basic” with the password “basic” will be a no rmal user in WebGoat.  \n\n \n5  \n",
+    " password “basic” will be a no rmal user in WebGoat.  \n\n \n5  \nTesting the war file  \nStart tomcat5 and open the url http://localhost:8080/WebGoat/attack in the browser.  \n \n \n \nEnter the credentials as guest / guest then click Sign In.  \n \n \n \nIn the Welcome Screen, click on “Start WebGoat” button.  \n \n \n\n\n \n6  \nTomcat Startup Logs  \nTomcat starup logs will be as below –  \n \nJan 16, 2020 12:53:51 PM org.apache.coyote.http11.Http11Protocol init \nINFO: Initializing Coyote HTTP/1.1 on http- 8080 \nJan 16, 2020 12:53:51 PM org.apache.catalina.startup.Catalina load \nINFO: Initialization processed in 380 ms \nJan 16, 2020 12:53:52 PM org.apache.catal",
+    " ms \nJan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardService start INFO: Starting service Catalina Jan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardEngine start \nINFO: Starting Servlet Engine: Apache Tomcat/5.0.28 \nJan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardHost start INFO: XML validation disabled Jan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardHost getDeployer INFO: Create Host deployer for direct deployment ( non- jmx ) \nJan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardHostDeployer install \nINFO: Processing Context configuration file URL file:C:\\ Tomcat5\\ conf\\Catalina\\ localhost\\ admin.xml \nJan 16, 2020 12:",
+    " conf\\Catalina\\ localhost\\ admin.xml \nJan 16, 2020 12:53:52 PM org.apache.struts.util.PropertyMessageResources <init> INFO: Initializing, config='org.apache.struts.util.LocalStrings', returnNull=true Jan 16, 2020 12:53:52 PM org.apache.struts.util.PropertyMessageResources <init> INFO: Initializing, config='org.apache.struts.action.ActionResources', returnNull=true \nJan 16, 2020 12:53:52 PM org.apache.struts.util.PropertyMessageResources <init> \nINFO: Initializing, config='org.apache.webapp.admin.ApplicationResources', returnNull=true \nJan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardHostDeployer install \nINFO: Processing Context configuration file URL file:C:\\ Tomcat5\\ conf\\Catalina\\ localhost\\ balancer.xml \nJan 16, 2020 12:53:52 PM org",
+    "\\ balancer.xml \nJan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardHostDeployer install INFO: Processing Context configuration file URL file:C:\\ Tomcat5\\ conf\\Catalina\\ localhost\\ manager.xml \nJan 16, 2020 12:53:52 PM org.apache.catalina.core.StandardHostDeployer install \nINFO: Installing web application at context path /WebGoat from URL file:C:/Tomcat5/webapps/WebGoat \nJan 16, 2020 12:53:52 PM org.apache.catalina.loader.WebappClassLoader validateJarFile \nINFO: validateJarFile(C:\\ Tomcat5\\ webapps\\ WebGoat\\ WEB-INF\\lib\\j2ee.jar) - jar not loaded. See Servlet \nSpec 2.3, section 9.7.2. Offending class: javax/servlet/Servlet.class \n- Unable to find required classes",
+    ".2. Offending class: javax/servlet/Servlet.class \n- Unable to find required classes (javax.activation.DataHandler and \njavax.mail.inter net.MimeMultipart). Attachment support is disabled. \nJan 16, 2020 12:53:53 PM org.apache.catalina.core.StandardHostDeployer install INFO: Installing web application at context path /jsp- examples from URL file:C:\\ Tomcat5\\ webapps\\ jsp-\nexamples Jan 16, 2020 12: 53:53 PM org.apache.catalina.core.StandardHostDeployer install \nINFO: Installing web application at context path  from URL file:C:\\ Tomcat5\\ webapps\\ ROOT \nJan 16, 2020 12:53:53 PM org.apache.catalina.core.StandardHostDeployer install INFO: Installing web application at context path /servlets- examples from URL \nfile:C:\\ Tomcat5\\ webapps\\ servlets-",
+    "ervlets- examples from URL \nfile:C:\\ Tomcat5\\ webapps\\ servlets- examples \nJan 16, 2020 12:53:53 PM org.apache.catalina.core.StandardHostDeployer install INFO: Installing web application at context path /tomcat- docs from URL \nfile:C:\\ Tomcat5\\ webapps\\ tomcat-docs \nJan 16, 2020 12:53:53 PM org.apache.catalina.core.StandardHostDeployer install INFO: Installing web application at context path /webdav from URL file:C:\\ Tomcat5\\ webapps\\ webdav \nJan 16, 2020 12:53:53 PM org.apache.coyote.http11.Http11Protocol start INFO: Starting Coyote HTTP/1.1 on http- 8080 \nJan 16, 2020 12:53:53 PM org.apache.jk.common.ChannelSocket init INFO: JK2:",
+    " 12:53:53 PM org.apache.jk.common.ChannelSocket init INFO: JK2: ajp13 listening on /0.0.0.0:8009 Jan 16, 2020 12:53:53 PM org.apache.jk.server.JkMain start INFO: Jk running ID=0 time=0/8  config=C:\\ Tomcat5\\ conf\\jk2.properties \nJan 16, 2020 12:53:53 PM org.apache.catalina.startup.Catalina start INFO: Server startup in 1661 ms Context Path: C:\\ Tomcat5\\ webapps\\ WebGoat\\  \nPATH: C:/Tomcat5/webapps/WebGoat/database Database Connection String: jdbc:odbc:;DRIVER=Microsoft Access Driver \n(*.mdb);DBQ=C:/Tomcat5/webapps/WebGoat/database/webgoat.mdb;PWD=webgoat\" \nSuccessful connection to",
+    "/WebGoat/database/webgoat.mdb;PWD=webgoat\" \nSuccessful connection to database Success: creating tables. Successfully refreshed the database. Thu Jan 16 12:54:07 IST 2020 | 172.17.5.236:172.17.5.236 | org.owasp.webgoat.lessons.HttpBasics | [] \nThu Jan 16 12:54:14 IST 2020 | 172.17.5.236:172.17.5.236 | org.owasp.webgoat.lessons.HttpBasics | \n[start=Start WebGoat] PATH: C:/Tomcat5/webapps/WebGoat/database Database Connection String: jdbc:odbc:;DRIVER=Microsoft Access Driver (*.mdb);DBQ=C:/Tomcat5/webapps/WebGoat/database/webgoat.mdb;PWD=webgoat\" Thu Jan 16 12:54:23 IST ",
+    "db;PWD=webgoat\" Thu Jan 16 12:54:23 IST 2020 | 172.17.5.236:172.17.5.236 | org.owasp.webgoat.lessons.HttpBasics | [person=Vikas,SUBMIT=Go!,menu=50] \n \n\n \n7  \n \n<End of the Document>  \n\n \n8 Micro Focus Trademark Information  \nMICRO FOCUS and the Micro Focus logo, among others, are trademarks or registered trademarks of Micro \nFocus (IP) Limited or its subsidiaries in the United Kingdom, United States and other countries. All other \nmarks are the property of their respective owners.  \n \nCompany Details  \nCompany name:  Micro Focus International plc  \nPlace of registration: England and Wales  \nRegistered number:  5134647 \nRegistered address:  The Lawn, 22 -30 Ol d Bath Road, Berkshire, R G14 1Q  \n \nNote",
+    " 22 -30 Ol d Bath Road, Berkshire, R G14 1Q  \n \nNote: This guide is not an official documentation by Micro Focus. Please read and refer to the \nofficial product documentation for additional information.  \n "
+  ],
+  "embeddings": [
+    [
+      1872.0,
+      29.0,
+      18.0
+    ],
+    [
+      793.0,
+      17.0,
+      7.0
+    ],
+    [
+      616.0,
+      34.0,
+      6.0
+    ],
+    [
+      611.0,
+      29.0,
+      6.0
+    ],
+    [
+      658.0,
+      76.0,
+      6.0
+    ],
+    [
+      616.0,
+      34.0,
+      6.0
+    ],
+    [
+      632.0,
+      50.0,
+      6.0
+    ],
+    [
+      769.0,
+      90.0,
+      7.0
+    ],
+    [
+      650.0,
+      68.0,
+      6.0
+    ],
+    [
+      670.0,
+      88.0,
+      6.0
+    ],
+    [
+      755.0,
+      76.0,
+      7.0
+    ],
+    [
+      677.0,
+      95.0,
+      6.0
+    ],
+    [
+      749.0,
+      70.0,
+      7.0
+    ],
+    [
+      639.0,
+      57.0,
+      6.0
+    ],
+    [
+      587.0,
+      5.0,
+      5.0
+    ],
+    [
+      573.0,
+      88.0,
+      5.0
+    ],
+    [
+      709.0,
+      30.0,
+      7.0
+    ],
+    [
+      206.0,
+      12.0,
+      2.0
+    ]
+  ]
+}

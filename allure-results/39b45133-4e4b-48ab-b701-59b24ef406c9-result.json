@@ -1,0 +1,31 @@
+{
+  "uid": "39b45133-4e4b-48ab-b701-59b24ef406c9",
+  "name": "step-11 assert DESCRIBE_TARGET",
+  "fullName": "step-11 assert DESCRIBE_TARGET",
+  "status": "failed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [
+    {
+      "source": "39b45133-4e4b-48ab-b701-59b24ef406c9-attachment.png",
+      "type": "image/png",
+      "name": "screenshot"
+    }
+  ],
+  "start": 1773493669039,
+  "stop": 1773493669040
+}

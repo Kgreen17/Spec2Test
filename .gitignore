@@ -1,0 +1,22 @@
+.env
+.env.*
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+# Byte-compiled / optimized / DLL files
+*.so
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+# Test / coverage
+.coverage
+htmlcov/
+# Logs
+logs/
+*.log
+
