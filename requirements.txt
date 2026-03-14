@@ -1,4 +1,5 @@
-# Minimal example requirements for the AI UI testing agent
+# Minimal and recommended dependencies for the AI UI testing pipeline
+# Required for core ingestion / embedding / execution
 langchain
 llama-index
 openai
@@ -9,4 +10,38 @@ fastapi
 uvicorn
 pytest
 allure-pytest
+python-dotenv
 
+# Document format + parsing
+python-docx  # DOCX support
+pandas       # CSV / Excel parsing (optional but recommended)
+openpyxl     # Excel xlsx backend for pandas
+beautifulsoup4
+requests
+
+# OCR & PDF helpers (optional - only needed for scanned PDFs / OCR fallbacks)
+Pillow
+pytesseract
+PyMuPDF      # fitz - rendering PDF pages for OCR
+pdf2image    # alternative PDF->image path (requires poppler installed on the system)
+
+# Utilities / LLM fine-tuning (optional)
+transformers
+peft
+accelerate
+safetensors
+datasets
+vllm
+
+# Local/CPU light inference (optional)
+# llama-cpp-python can be used for ggml-based local inference
+llama-cpp-python
+
+# Dev / extras
+black
+isort
+mypy
+bandit
+
+# Note: Some packages (playwright, pdf2image, pytesseract) require system dependencies.
+# See README.md troubleshooting for platform-specific install notes (poppler, tesseract, browsers).

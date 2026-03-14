@@ -61,19 +61,33 @@ def main():
     args = parser.parse_args()
 
     repo_root = Path(__file__).resolve().parent
-    docs_dir = Path(args.docs).expanduser().resolve() if args.docs else repo_root / "docs"
-
-    if not docs_dir.exists():
-        print(f"Docs directory not found: {docs_dir}")
-        sys.exit(2)
+    # Accept --docs as a URL, a file path, or a directory. If not provided, default to repo_root/docs
+    if args.docs:
+        docs_input = args.docs.strip()
+        if docs_input.startswith('http://') or docs_input.startswith('https://'):
+            docs_source = docs_input
+            print(f"Using docs URL: {docs_source}")
+        else:
+            p = Path(docs_input).expanduser().resolve()
+            if not p.exists():
+                print(f"Docs path not found: {p}")
+                sys.exit(2)
+            docs_source = p
+            print(f"Using docs path: {docs_source}")
+    else:
+        docs_source = repo_root / 'docs'
+        print(f"Using default docs directory: {docs_source}")
+        if not docs_source.exists():
+            print(f"Docs directory not found: {docs_source}")
+            sys.exit(2)
 
     base = Path(__file__).resolve().parent / "pipeline" / "ingestion"
     doc_loader = load_module_from_path(base / 'doc_loader.py', 'doc_loader')
     chunker = load_module_from_path(base / 'chunker.py', 'chunker')
     embedder = load_module_from_path(base / 'embedder.py', 'embedder')
 
-    print(f"Loading documents from: {docs_dir}")
-    docs = doc_loader.load_documents(str(docs_dir))
+    print(f"Loading documents from: {docs_source}")
+    docs = doc_loader.load_documents(str(docs_source))
     if not docs:
         print("No documents found.")
         sys.exit(3)

@@ -17,6 +17,126 @@ from typing import List
 import argparse
 import sys
 import traceback
+import os
+
+# New optional imports will be attempted in helper functions when needed.
+import csv
+
+
+def _extract_docx_text(path: Path) -> str:
+    try:
+        import docx
+    except Exception as e:
+        return f"[DOCX extraction unavailable: missing package python-docx ({e})] {path}"
+
+    try:
+        doc = docx.Document(str(path))
+        paragraphs = [p.text for p in doc.paragraphs if p.text]
+        return "\n\n".join(paragraphs)
+    except Exception as e:
+        return f"[DOCX read error: {e}] {path}"
+
+
+def _extract_spreadsheet_text(path: Path) -> str:
+    # Try pandas first (handles csv and Excel). Fall back to csv module for .csv.
+    suffix = path.suffix.lower()
+    try:
+        import pandas as pd
+    except Exception:
+        pd = None
+
+    if pd:
+        try:
+            if suffix == '.csv':
+                df = pd.read_csv(str(path), dtype=str, encoding='utf-8', low_memory=False)
+            else:
+                # Excel (xls/xlsx)
+                df = pd.read_excel(str(path), dtype=str)
+            # Convert a sample of rows into readable text (limit to first 200 rows)
+            rows = []
+            max_rows = min(200, len(df))
+            cols = df.columns.tolist()
+            rows.append(' | '.join(map(str, cols)))
+            for i in range(max_rows):
+                row = df.iloc[i].fillna('')
+                rows.append(' | '.join(str(x) for x in row.tolist()))
+            return '\n'.join(rows)
+        except Exception as e:
+            return f"[Spreadsheet parsing error (pandas): {e}] {path}"
+    else:
+        # No pandas: if CSV try the csv module, otherwise return helpful message
+        if suffix == '.csv':
+            try:
+                with open(path, newline='', encoding='utf-8') as csvfile:
+                    reader = csv.reader(csvfile)
+                    lines = []
+                    for i, row in enumerate(reader):
+                        lines.append(', '.join(row))
+                        if i > 200:
+                            break
+                return '\n'.join(lines)
+            except Exception as e:
+                return f"[CSV read error: {e}] {path}"
+        else:
+            return f"[Spreadsheet extraction unavailable: install pandas for Excel support] {path}"
+
+
+def _fetch_url_text(url: str) -> str:
+    # Fetch an HTML page (Confluence or generic) and attempt to extract meaningful content.
+    try:
+        import requests
+    except Exception as e:
+        return f"[URL fetch unavailable: missing package requests ({e})] {url}"
+
+    # Support optional basic auth for Confluence using env vars
+    auth = None
+    user = os.environ.get('CONFLUENCE_USER')
+    token = os.environ.get('CONFLUENCE_TOKEN')
+    if user and token:
+        auth = (user, token)
+
+    try:
+        resp = requests.get(url, auth=auth, timeout=15)
+        resp.raise_for_status()
+        html = resp.text
+    except Exception as e:
+        return f"[URL fetch error: {e}] {url}"
+
+    # Parse HTML with BeautifulSoup if available, otherwise strip tags roughly
+    try:
+        from bs4 import BeautifulSoup
+    except Exception:
+        # Fallback: remove tags naively
+        import re
+        text = re.sub(r'<script.*?>.*?</script>', '', html, flags=re.S | re.I)
+        text = re.sub(r'<[^>]+>', '', text)
+        return text
+
+    try:
+        soup = BeautifulSoup(html, 'html.parser')
+        # Confluence often stores page contents inside <div id="main-content"> or <div id="content"> or <article>
+        content = None
+        for sel in ['#main-content', '#content', 'article', 'div#main-content', 'div#content', 'div#content-body', 'div.wiki-content', 'div.ak-renderer-document']:
+            el = soup.select_one(sel)
+            if el:
+                content = el
+                break
+        if content is None:
+            # fallback to the largest <div> or the body
+            divs = soup.find_all('div')
+            if divs:
+                # pick the div with the most text
+                divs_sorted = sorted(divs, key=lambda d: len(d.get_text(strip=True) or ''), reverse=True)
+                content = divs_sorted[0]
+            else:
+                content = soup.body or soup
+
+        # Extract visible text, collapse whitespace
+        text = content.get_text(separator='\n\n')
+        text = (text or '').strip()
+        return text or f"[No extractable text found in HTML] {url}"
+    except Exception as e:
+        return f"[HTML parse error: {e}] {url}"
 
 
 def _ocr_pdf_text_with_pymupdf(path: Path) -> str:
@@ -147,10 +267,45 @@ def _read_text_file(path: Path) -> str:
 
 
 def load_documents(dir_path: str) -> List[dict]:
-    # Public API: given a directory path, return a list of document records.
-    # Each record is a dict: {"path": str, "text": str, "type": 'pdf'|'text'|'other'}
-    base = Path(dir_path)
+    # Public API: given a directory path or a URL or file path, return a list of document records.
+    # Each record is a dict: {"path": str, "text": str, "type": 'pdf'|'text'|'docx'|'spreadsheet'|'html'|'other'}
+    base = Path(dir_path) if dir_path and not (dir_path.startswith('http://') or dir_path.startswith('https://')) else dir_path
     docs = []
+
+    # If the caller passed a URL string, fetch it and return one record
+    if isinstance(base, str) and (base.startswith('http://') or base.startswith('https://')):
+        txt = _fetch_url_text(base)
+        docs.append({"path": base, "text": txt, "type": "html"})
+        return docs
+
+    # If it's a file path, process the single file
+    if isinstance(base, Path) and base.exists() and base.is_file():
+        p = base
+        lower = p.suffix.lower()
+        if lower == ".pdf":
+            txt = _extract_pdf_text(p)
+            docs.append({"path": str(p), "text": txt, "type": "pdf"})
+            return docs
+        if lower == ".docx":
+            txt = _extract_docx_text(p)
+            docs.append({"path": str(p), "text": txt, "type": "docx"})
+            return docs
+        if lower in ('.csv', '.xls', '.xlsx'):
+            txt = _extract_spreadsheet_text(p)
+            docs.append({"path": str(p), "text": txt, "type": "spreadsheet"})
+            return docs
+        if lower in ('.txt', '.md'):
+            txt = _read_text_file(p)
+            docs.append({"path": str(p), "text": txt, "type": "text"})
+            return docs
+        # unknown single file
+        docs.append({"path": str(p), "text": "[skipped non-text file]", "type": "other"})
+        return docs
+
+    # Otherwise treat base as a directory path (existing logic)
+    if not isinstance(base, Path):
+        base = Path(dir_path)
+
     if not base.exists():
         return [{"path": str(base), "text": "[Directory not found]", "type": "none"}]
 
@@ -161,6 +316,12 @@ def load_documents(dir_path: str) -> List[dict]:
                 # For PDFs use the PDF extractor which internally handles OCR fallbacks.
                 txt = _extract_pdf_text(p)
                 docs.append({"path": str(p), "text": txt, "type": "pdf"})
+            elif lower == ".docx":
+                txt = _extract_docx_text(p)
+                docs.append({"path": str(p), "text": txt, "type": "docx"})
+            elif lower in ('.csv', '.xls', '.xlsx'):
+                txt = _extract_spreadsheet_text(p)
+                docs.append({"path": str(p), "text": txt, "type": "spreadsheet"})
             elif lower in (".txt", ".md"):
                 # For plain text/markdown read the file directly.
                 txt = _read_text_file(p)
