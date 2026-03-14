@@ -33,23 +33,102 @@ testing. This is a very good use case for an LLM + RAG + Browser automation agen
 
 ## Run / Quick Start
 
-From the project root, run:
+- Quick local run (demo):
 
 ```bash
 python3 main.py
 ```
 
-or, if `python` is mapped to Python 3 in your environment:
+- Full end-to-end pipeline (ingest → embed → LLM test planner → executor → Allure results)
+
+This repository includes a single orchestrator entrypoint `main.py` that now wires the full flow. The commands below show common ways to run the pipeline from the repo root. These examples assume you have a working Python 3.8+ environment and that optional tools (Playwright, Allure CLI) are installed when used.
+
+1) Generate embeddings + a test plan (no executor):
 
 ```bash
-python main.py
+python3 main.py --save out_embeddings.json --generate-tests --tests-out generated_test_plan.json
 ```
 
-You should see output like:
+2) Run the full pipeline including the Playwright executor (real headless run). System-level steps are skipped for safety by default:
 
+```bash
+python3 main.py --save out_embeddings.json --generate-tests --tests-out generated_test_plan.json \
+  --run-executor --executor-out reports/generated_test_plan_report.json --allure-generate
 ```
-Hi, PyCharm
+
+3) Run the executor in simulate-only mode (safe, no browser launched):
+
+```bash
+python3 main.py --generate-tests --run-executor --simulate-executor --executor-out reports/generated_test_plan_report.json --allure-generate
 ```
+
+4) Watch `docs/` for changes and run the full pipeline automatically (safe default: simulate executor).
+
+```bash
+python3 scripts/watch_and_run.py
+# To allow real executor runs when changes are detected (use with care):
+REAL=1 python3 scripts/watch_and_run.py
+```
+
+Allure report generation and viewing
+
+- The `--allure-generate` flag will create `allure-results/` (JSON + attachments). To render and view the HTML report you need the Allure CLI installed (Homebrew or downloaded binary):
+
+macOS (Homebrew):
+
+```bash
+brew install allure
+# generate + open the report
+allure generate allure-results -o allure-report --clean
+allure open allure-report
+```
+
+If you used `--allure-generate` with `main.py`, the converter already created `allure-results/`; the commands above generate the HTML under `allure-report/` and open a local web server.
+
+Useful helper scripts
+
+- `pipeline/agents/executor/auto_resolve_selectors.py` — try to resolve DESCRIBE_TARGET placeholders by probing the live DOM (safe, non-destructive).
+- `pipeline/agents/executor/run_playwright_executor.py` — runs a JSON plan via the Playwright runner (supports `--simulate` to avoid launching a browser).
+- `pipeline/agents/executor/generate_allure_results.py` — convert executor report JSON into Allure result files.
+- `pipeline/agents/executor/run_postprocess.py` — runs selector suggester, generates Playwright script, and summarizes reports.
+- `scripts/watch_and_run.py` — lightweight file watcher that triggers the pipeline when `docs/` change.
+
+Dependencies (quick)
+
+These are the main packages you may want to install locally for the full experience:
+
+```bash
+python3 -m pip install -r requirements.txt
+# If you plan to run Playwright flows locally:
+python3 -m pip install playwright
+python3 -m playwright install chromium
+# For Allure generation (macOS Homebrew recommended):
+brew install allure
+```
+
+If you don't have a `requirements.txt`, ensure you at least have:
+- openai
+- python-dotenv (optional, to load `.env`)
+- playwright (for browser runs)
+- pydantic
+- pytest (optional for tests)
+
+Security note
+
+- Do NOT commit secrets or API keys. Use a local `.env` file or environment variables to provide `OPENAI_API_KEY` and other sensitive values. See the "Secrets & API keys" section below for more details.
+
+Troubleshooting & tips
+
+- If Playwright times out waiting for a selector:
+  - Open `reports/screenshots/` (executions save screenshots on failure) and inspect the DOM to derive a better selector.
+  - Use `pipeline/agents/executor/auto_resolve_selectors.py` to attempt automatic selector discovery, then review the generated script `generated_playwright_test_resolved.py`.
+
+- If the LLM produces placeholders like `DESCRIBE_TARGET`, either:
+  - Run auto-resolve to attempt heuristic selector discovery, or
+  - Update the generated Playwright script manually with robust selectors (IDs, stable classes, or text/href checks).
+
+- Allure CLI not found via `npx`? Install it with Homebrew or download the binary (Homebrew recommended on macOS). See `reports/README_ALLURE.md` for alternatives.
+
 
 ## Secrets & API keys
 
