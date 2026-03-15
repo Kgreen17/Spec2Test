@@ -1,0 +1,19 @@
+{
+  "job_id": "26a84eb4-ffb9-4f5e-bab8-be8ac984cd3d",
+  "status": "SUCCESS",
+  "artifacts": {
+    "embeddings": "reports/job_26a84eb4-ffb9-4f5e-bab8-be8ac984cd3d/out_embeddings_26a84eb4-ffb9-4f5e-bab8-be8ac984cd3d.json"
+  },
+  "logs": [
+    "Starting job 26a84eb4-ffb9-4f5e-bab8-be8ac984cd3d for source: docs",
+    "Loading documents...",
+    "Selected document: docs/WebGoat 5 Deployment Guide v0.1.pdf",
+    "Chunking by characters...",
+    "Created 4 chunks",
+    "Embedding backend: dummy",
+    "Generated 4 embeddings",
+    "Saved embeddings: reports/job_26a84eb4-ffb9-4f5e-bab8-be8ac984cd3d/out_embeddings_26a84eb4-ffb9-4f5e-bab8-be8ac984cd3d.json",
+    "Converting executor report to Allure results...",
+    "No executor report to convert to Allure"
+  ]
+}

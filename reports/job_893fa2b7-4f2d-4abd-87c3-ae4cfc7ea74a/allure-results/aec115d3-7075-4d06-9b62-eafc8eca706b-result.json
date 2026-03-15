@@ -1,0 +1,25 @@
+{
+  "uid": "aec115d3-7075-4d06-9b62-eafc8eca706b",
+  "name": "step-1 navigate https://example.com",
+  "fullName": "step-1 navigate https://example.com",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773600504731,
+  "stop": 1773600504732
+}

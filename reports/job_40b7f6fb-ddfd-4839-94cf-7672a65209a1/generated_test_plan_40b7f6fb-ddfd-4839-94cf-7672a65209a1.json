@@ -1,0 +1,225 @@
+{
+  "plan": {
+    "test_name": "Validate WebGoat 5 Deployment Feature",
+    "description": "Validate the deployment feature based on WebGoat 5 Deployment Guide v0.1",
+    "metadata": null,
+    "steps": [
+      {
+        "id": 1,
+        "action": "navigate",
+        "target": "https://webgoat.example.com",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 2,
+        "action": "click",
+        "target": "text=Admin",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 3,
+        "action": "click",
+        "target": "text=Deploy",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 4,
+        "action": "fill",
+        "target": "DESCRIBE_TARGET",
+        "value": "deployment_settings",
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 5,
+        "action": "select",
+        "target": "DESCRIBE_TARGET",
+        "value": "production_environment",
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 6,
+        "action": "fill",
+        "target": "DESCRIBE_TARGET",
+        "value": "app_name",
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 7,
+        "action": "fill",
+        "target": "DESCRIBE_TARGET",
+        "value": "version",
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 8,
+        "action": "click",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 9,
+        "action": "wait",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": 60.0,
+        "metadata": null
+      },
+      {
+        "id": 10,
+        "action": "assert",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": "Deployment successful",
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 11,
+        "action": "assert",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": "App version updated",
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 12,
+        "action": "click",
+        "target": "text=Logs",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 13,
+        "action": "assert",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": "No errors in logs",
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 14,
+        "action": "click",
+        "target": "text=Monitoring",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 15,
+        "action": "assert",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": "Monitoring dashboard displayed",
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 16,
+        "action": "click",
+        "target": "text=Settings",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 17,
+        "action": "assert",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": "Settings page loaded",
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 18,
+        "action": "click",
+        "target": "text=Logout",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 19,
+        "action": "assert",
+        "target": "DESCRIBE_TARGET",
+        "value": null,
+        "expected": "Logged out successfully",
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      },
+      {
+        "id": 20,
+        "action": "navigate",
+        "target": "https://webgoat.example.com/login",
+        "value": null,
+        "expected": null,
+        "retries": 0,
+        "timeout_seconds": null,
+        "metadata": null
+      }
+    ]
+  },
+  "source": "llm",
+  "usage": {
+    "completion_tokens": 570,
+    "prompt_tokens": 576,
+    "total_tokens": 1146,
+    "completion_tokens_details": {
+      "accepted_prediction_tokens": 0,
+      "audio_tokens": 0,
+      "reasoning_tokens": 0,
+      "rejected_prediction_tokens": 0
+    },
+    "prompt_tokens_details": {
+      "audio_tokens": 0,
+      "cached_tokens": 0
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "155e833d-763f-4ac0-b061-7a7a0693af74",
+  "name": "step-13 assert DESCRIBE_TARGET",
+  "fullName": "step-13 assert DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907800,
+  "stop": 1773546907801
+}

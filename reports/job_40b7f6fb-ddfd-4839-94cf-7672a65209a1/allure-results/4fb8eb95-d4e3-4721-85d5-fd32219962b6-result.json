@@ -1,0 +1,25 @@
+{
+  "uid": "4fb8eb95-d4e3-4721-85d5-fd32219962b6",
+  "name": "step-12 click text=Logs",
+  "fullName": "step-12 click text=Logs",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907799,
+  "stop": 1773546907800
+}

@@ -1,0 +1,27 @@
+{
+  "job_id": "7798ee41-cbde-465f-9e48-afd1926d5eb1",
+  "status": "SUCCESS",
+  "artifacts": {
+    "embeddings": "reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/out_embeddings_7798ee41-cbde-465f-9e48-afd1926d5eb1.json",
+    "plan": "reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/generated_test_plan_7798ee41-cbde-465f-9e48-afd1926d5eb1.json",
+    "executor_report": "reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/generated_test_plan_report_7798ee41-cbde-465f-9e48-afd1926d5eb1.json",
+    "allure_results": "reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/allure-results"
+  },
+  "logs": [
+    "Starting job 7798ee41-cbde-465f-9e48-afd1926d5eb1 for source: /app/uploads/baad3f5f-f1b8-4bd3-83a0-d517e89fb5a1_Testing document.pdf",
+    "Loading documents...",
+    "Selected document: /app/uploads/baad3f5f-f1b8-4bd3-83a0-d517e89fb5a1_Testing document.pdf",
+    "Chunking by characters...",
+    "Created 1 chunks",
+    "Embedding backend: dummy (batch_size=100, timeout=30s, retries=2)",
+    "Embedding batch 1-1 (attempt 1)",
+    "Generated 1 embeddings",
+    "Saved embeddings: reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/out_embeddings_7798ee41-cbde-465f-9e48-afd1926d5eb1.json",
+    "Running LLM test planner...",
+    "Wrote test plan: reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/generated_test_plan_7798ee41-cbde-465f-9e48-afd1926d5eb1.json",
+    "Running executor...",
+    "Executor finished, report: reports/job_7798ee41-cbde-465f-9e48-afd1926d5eb1/generated_test_plan_report_7798ee41-cbde-465f-9e48-afd1926d5eb1.json",
+    "Converting executor report to Allure results...",
+    "Allure CLI not available or generation failed; results are in allure-results"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "5aa7fc26-26bc-4adb-9273-6e3ff6aa73fc",
+  "name": "step-2 click text=Start",
+  "fullName": "step-2 click text=Start",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773607168924,
+  "stop": 1773607168925
+}

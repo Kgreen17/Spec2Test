@@ -1,0 +1,27 @@
+{
+  "job_id": "5f27022b-57e0-4a17-b603-ef411f11d0cc",
+  "status": "SUCCESS",
+  "artifacts": {
+    "embeddings": "reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/out_embeddings_5f27022b-57e0-4a17-b603-ef411f11d0cc.json",
+    "plan": "reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/generated_test_plan_5f27022b-57e0-4a17-b603-ef411f11d0cc.json",
+    "executor_report": "reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/generated_test_plan_report_5f27022b-57e0-4a17-b603-ef411f11d0cc.json",
+    "allure_results": "reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/allure-results",
+    "allure_report": "reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/allure-report"
+  },
+  "logs": [
+    "Starting job 5f27022b-57e0-4a17-b603-ef411f11d0cc for source: docs",
+    "Loading documents...",
+    "Selected document: docs/WebGoat 5 Deployment Guide v0.1.pdf",
+    "Chunking by characters...",
+    "Created 4 chunks",
+    "Embedding backend: dummy",
+    "Generated 4 embeddings",
+    "Saved embeddings: reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/out_embeddings_5f27022b-57e0-4a17-b603-ef411f11d0cc.json",
+    "Running LLM test planner...",
+    "Wrote test plan: reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/generated_test_plan_5f27022b-57e0-4a17-b603-ef411f11d0cc.json",
+    "Running executor...",
+    "Executor finished, report: reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/generated_test_plan_report_5f27022b-57e0-4a17-b603-ef411f11d0cc.json",
+    "Converting executor report to Allure results...",
+    "Allure HTML report generated at reports/job_5f27022b-57e0-4a17-b603-ef411f11d0cc/allure-report"
+  ]
+}

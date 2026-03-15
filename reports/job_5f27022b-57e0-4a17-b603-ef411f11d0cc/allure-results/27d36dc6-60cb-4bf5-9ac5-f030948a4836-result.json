@@ -1,0 +1,25 @@
+{
+  "uid": "27d36dc6-60cb-4bf5-9ac5-f030948a4836",
+  "name": "step-5 assert text=World population review",
+  "fullName": "step-5 assert text=World population review",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122622,
+  "stop": 1773533122623
+}

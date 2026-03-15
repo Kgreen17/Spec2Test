@@ -1,0 +1,25 @@
+{
+  "uid": "a30f06b6-5964-42af-b597-2a6f38694539",
+  "name": "step-8 click text=Wikipedia",
+  "fullName": "step-8 click text=Wikipedia",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122623,
+  "stop": 1773533122624
+}

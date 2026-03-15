@@ -1,0 +1,25 @@
+{
+  "uid": "98f51bfc-0c85-4e50-aa5d-1a46f14bb85d",
+  "name": "step-1 navigate https://webgoat.example.com",
+  "fullName": "step-1 navigate https://webgoat.example.com",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907785,
+  "stop": 1773546907786
+}

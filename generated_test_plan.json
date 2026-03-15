@@ -1,115 +1,26 @@
 {
   "plan": {
-    "test_name": "Google Search - Top Cities in USA",
-    "description": "Search for the biggest cities in the USA on Google",
-    "metadata": null,
+    "test_name": "Generate a test plan to validate the feature described in the docs: /Users/kevin",
+    "description": "Mock test plan (no LLM)",
     "steps": [
       {
         "id": 1,
         "action": "navigate",
-        "target": "https://www.google.com/",
-        "value": null,
-        "expected": null,
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
+        "target": "https://example.com"
       },
       {
         "id": 2,
-        "action": "fill",
-        "target": "DESCRIBE_TARGET",
-        "value": "biggest cities in the USA",
-        "expected": null,
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
+        "action": "click",
+        "target": "text=Start"
       },
       {
         "id": 3,
-        "action": "submit",
-        "target": "DESCRIBE_TARGET",
-        "value": null,
-        "expected": null,
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
-      },
-      {
-        "id": 4,
         "action": "assert",
-        "target": "text=Wikipedia",
-        "value": null,
-        "expected": "Wikipedia",
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
-      },
-      {
-        "id": 5,
-        "action": "assert",
-        "target": "text=World population review",
-        "value": null,
-        "expected": "World population review",
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
-      },
-      {
-        "id": 6,
-        "action": "assert",
-        "target": "text=Britannica",
-        "value": null,
-        "expected": "Britannica",
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
-      },
-      {
-        "id": 7,
-        "action": "assert",
-        "target": "text=NYC.gov",
-        "value": null,
-        "expected": "NYC.gov",
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
-      },
-      {
-        "id": 8,
-        "action": "click",
-        "target": "text=Wikipedia",
-        "value": null,
-        "expected": null,
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
-      },
-      {
-        "id": 9,
-        "action": "assert",
-        "target": "DESCRIBE_TARGET",
-        "value": null,
-        "expected": "List of cities in the USA based on population",
-        "retries": 0,
-        "timeout_seconds": null,
-        "metadata": null
+        "target": "text=Success",
+        "expected": "Success"
       }
     ]
   },
-  "source": "llm",
-  "usage": {
-    "completion_tokens": 296,
-    "prompt_tokens": 1108,
-    "total_tokens": 1404,
-    "completion_tokens_details": {
-      "accepted_prediction_tokens": 0,
-      "audio_tokens": 0,
-      "reasoning_tokens": 0,
-      "rejected_prediction_tokens": 0
-    },
-    "prompt_tokens_details": {
-      "audio_tokens": 0,
-      "cached_tokens": 0
-    }
-  }
+  "source": "mock",
+  "note": "MOCK_LLM or no OPENAI_API_KEY detected"
 }

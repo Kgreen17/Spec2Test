@@ -1,0 +1,25 @@
+{
+  "uid": "5d69331c-7c4c-406a-9b23-5f0d612a25d7",
+  "name": "step-18 click text=Logout",
+  "fullName": "step-18 click text=Logout",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907806,
+  "stop": 1773546907807
+}

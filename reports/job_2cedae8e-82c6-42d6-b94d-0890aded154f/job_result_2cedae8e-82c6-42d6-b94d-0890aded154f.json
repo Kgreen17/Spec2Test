@@ -1,0 +1,27 @@
+{
+  "job_id": "2cedae8e-82c6-42d6-b94d-0890aded154f",
+  "status": "SUCCESS",
+  "artifacts": {
+    "embeddings": "reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/out_embeddings_2cedae8e-82c6-42d6-b94d-0890aded154f.json",
+    "plan": "reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/generated_test_plan_2cedae8e-82c6-42d6-b94d-0890aded154f.json",
+    "executor_report": "reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/generated_test_plan_report_2cedae8e-82c6-42d6-b94d-0890aded154f.json",
+    "allure_results": "reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/allure-results"
+  },
+  "logs": [
+    "Starting job 2cedae8e-82c6-42d6-b94d-0890aded154f for source: /app/uploads/066d07a0-8ad2-4d70-a864-92b3ea03c56b_WebGoat 5 Deployment Guide v0.1.pdf",
+    "Loading documents...",
+    "Selected document: /app/uploads/066d07a0-8ad2-4d70-a864-92b3ea03c56b_WebGoat 5 Deployment Guide v0.1.pdf",
+    "Chunking by characters...",
+    "Created 1 chunks",
+    "Embedding backend: dummy (batch_size=100, timeout=30s, retries=2)",
+    "Embedding batch 1-1 (attempt 1)",
+    "Generated 1 embeddings",
+    "Saved embeddings: reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/out_embeddings_2cedae8e-82c6-42d6-b94d-0890aded154f.json",
+    "Running LLM test planner...",
+    "Wrote test plan: reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/generated_test_plan_2cedae8e-82c6-42d6-b94d-0890aded154f.json",
+    "Running executor...",
+    "Executor finished, report: reports/job_2cedae8e-82c6-42d6-b94d-0890aded154f/generated_test_plan_report_2cedae8e-82c6-42d6-b94d-0890aded154f.json",
+    "Converting executor report to Allure results...",
+    "Allure CLI not available or generation failed; results are in allure-results"
+  ]
+}

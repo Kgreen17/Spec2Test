@@ -1,0 +1,26 @@
+{
+  "plan": {
+    "test_name": "Generate a test plan to validate the feature described in the docs: /app/uploads",
+    "description": "Mock test plan (no LLM)",
+    "steps": [
+      {
+        "id": 1,
+        "action": "navigate",
+        "target": "https://example.com"
+      },
+      {
+        "id": 2,
+        "action": "click",
+        "target": "text=Start"
+      },
+      {
+        "id": 3,
+        "action": "assert",
+        "target": "text=Success",
+        "expected": "Success"
+      }
+    ]
+  },
+  "source": "mock",
+  "note": "MOCK_LLM or no OPENAI_API_KEY detected"
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "c4e38f2d-862a-4936-82ab-a174aee34c61",
+  "name": "step-9 wait DESCRIBE_TARGET",
+  "fullName": "step-9 wait DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907795,
+  "stop": 1773546907796
+}

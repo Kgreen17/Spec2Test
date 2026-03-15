@@ -1,0 +1,25 @@
+{
+  "uid": "5585808f-a26e-4de1-8d3e-7b76bceb6b94",
+  "name": "step-3 assert text=Success",
+  "fullName": "step-3 assert text=Success",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773607764505,
+  "stop": 1773607764506
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "fa528a3c-8143-400b-978b-9403d8c72080",
+  "name": "step-17 assert DESCRIBE_TARGET",
+  "fullName": "step-17 assert DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907805,
+  "stop": 1773546907806
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "6d526379-8d4d-4799-ada0-1fabf0eb24ee",
+  "name": "step-8 click DESCRIBE_TARGET",
+  "fullName": "step-8 click DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907794,
+  "stop": 1773546907795
+}

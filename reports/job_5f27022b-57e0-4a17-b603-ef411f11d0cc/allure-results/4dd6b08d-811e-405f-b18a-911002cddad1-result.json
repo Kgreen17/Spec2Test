@@ -1,0 +1,25 @@
+{
+  "uid": "4dd6b08d-811e-405f-b18a-911002cddad1",
+  "name": "step-3 submit DESCRIBE_TARGET",
+  "fullName": "step-3 submit DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122621,
+  "stop": 1773533122622
+}

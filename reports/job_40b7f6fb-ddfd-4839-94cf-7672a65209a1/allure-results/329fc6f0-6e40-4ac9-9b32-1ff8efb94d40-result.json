@@ -1,0 +1,25 @@
+{
+  "uid": "329fc6f0-6e40-4ac9-9b32-1ff8efb94d40",
+  "name": "step-20 navigate https://webgoat.example.com/login",
+  "fullName": "step-20 navigate https://webgoat.example.com/login",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907808,
+  "stop": 1773546907809
+}

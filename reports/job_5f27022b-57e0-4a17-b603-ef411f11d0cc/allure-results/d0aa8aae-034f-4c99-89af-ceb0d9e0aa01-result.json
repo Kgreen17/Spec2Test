@@ -1,0 +1,25 @@
+{
+  "uid": "d0aa8aae-034f-4c99-89af-ceb0d9e0aa01",
+  "name": "step-7 assert text=NYC.gov",
+  "fullName": "step-7 assert text=NYC.gov",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122623,
+  "stop": 1773533122624
+}

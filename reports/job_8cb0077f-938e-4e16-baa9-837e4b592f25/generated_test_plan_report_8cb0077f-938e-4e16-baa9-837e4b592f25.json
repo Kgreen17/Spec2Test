@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "action": "navigate",
+      "target": "https://example.com",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 2,
+      "action": "click",
+      "target": "text=Start",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 3,
+      "action": "assert",
+      "target": "text=Success",
+      "status": "PASS",
+      "reason": null
+    }
+  ],
+  "summary": {
+    "pass": 3,
+    "fail": 0,
+    "skipped": 0,
+    "warnings": 0,
+    "total": 3
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "79a98da0-532f-49d6-bc18-8f215cd8a3af",
+  "name": "step-3 click text=Deploy",
+  "fullName": "step-3 click text=Deploy",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907787,
+  "stop": 1773546907788
+}

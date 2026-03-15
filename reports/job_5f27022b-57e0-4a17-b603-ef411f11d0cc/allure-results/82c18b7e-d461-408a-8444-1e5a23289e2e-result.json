@@ -1,0 +1,25 @@
+{
+  "uid": "82c18b7e-d461-408a-8444-1e5a23289e2e",
+  "name": "step-4 assert text=Wikipedia",
+  "fullName": "step-4 assert text=Wikipedia",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122622,
+  "stop": 1773533122623
+}

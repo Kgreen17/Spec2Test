@@ -1,0 +1,25 @@
+{
+  "uid": "0b1cf157-c40d-46b6-bfdb-1774348f2dc7",
+  "name": "step-14 click text=Monitoring",
+  "fullName": "step-14 click text=Monitoring",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907801,
+  "stop": 1773546907802
+}

@@ -82,7 +82,26 @@ def _extract_spreadsheet_text(path: Path) -> str:
 
 
 def _fetch_url_text(url: str) -> str:
-    # Fetch an HTML page (Confluence or generic) and attempt to extract meaningful content.
+    # First try to fetch Confluence/Jira content using link_extractor
+    try:
+        from . import link_extractor
+        
+        # Support optional basic auth for Confluence using env vars
+        auth = None
+        user = os.environ.get('CONFLUENCE_USER')
+        token = os.environ.get('CONFLUENCE_TOKEN')
+        if user and token:
+            auth = (user, token)
+        
+        result = link_extractor.fetch_link_content(url, auth)
+        if result:
+            content = result.get('content', '')
+            source_type = result.get('type', 'unknown')
+            return f"[Source: {source_type}]\n\n{content}"
+    except Exception as e:
+        pass  # Fall back to basic HTML extraction
+    
+    # Fallback: generic HTML fetch
     try:
         import requests
     except Exception as e:
@@ -126,13 +145,13 @@ def _fetch_url_text(url: str) -> str:
             divs = soup.find_all('div')
             if divs:
                 # pick the div with the most text
-                divs_sorted = sorted(divs, key=lambda d: len(d.get_text(strip=True) or ''), reverse=True)
+                divs_sorted = sorted(divs, key=lambda d: len(d.get_text() or ''), reverse=True)
                 content = divs_sorted[0]
             else:
                 content = soup.body or soup
 
         # Extract visible text, collapse whitespace
-        text = content.get_text(separator='\n\n')
+        text = content.get_text()
         text = (text or '').strip()
         return text or f"[No extractable text found in HTML] {url}"
     except Exception as e:

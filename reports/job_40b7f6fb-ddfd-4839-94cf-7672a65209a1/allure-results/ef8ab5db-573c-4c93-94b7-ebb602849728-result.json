@@ -1,0 +1,25 @@
+{
+  "uid": "ef8ab5db-573c-4c93-94b7-ebb602849728",
+  "name": "step-5 select DESCRIBE_TARGET",
+  "fullName": "step-5 select DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Unknown action - not executed"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907790,
+  "stop": 1773546907791
+}

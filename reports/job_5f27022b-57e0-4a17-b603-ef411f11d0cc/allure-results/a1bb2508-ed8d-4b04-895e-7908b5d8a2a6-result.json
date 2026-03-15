@@ -1,0 +1,25 @@
+{
+  "uid": "a1bb2508-ed8d-4b04-895e-7908b5d8a2a6",
+  "name": "step-6 assert text=Britannica",
+  "fullName": "step-6 assert text=Britannica",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122623,
+  "stop": 1773533122624
+}

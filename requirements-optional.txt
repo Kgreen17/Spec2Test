@@ -1,0 +1,23 @@
+# Optional heavyweight packages for local LLM training/serving and fine-tuning
+# Install these only if you intend to run local model inference or fine-tuning (they may require GPUs or special wheels)
+
+# Large model infra (may require specific torch builds)
+transformers
+peft
+accelerate
+safetensors
+datasets
+vllm
+llama-cpp-python
+
+# Optional: specific torch build (commented out by default - install manually when appropriate)
+# torch==2.8.0
+
+# Other dev/security/tools
+black
+isort
+mypy
+bandit
+
+# Note: installation of some of the above requires system libs, GPU support, or specific pip indexes. Only install when needed.
+

@@ -1,0 +1,25 @@
+{
+  "uid": "c5dbfc0a-0d88-47f0-acf3-659ce3164dc4",
+  "name": "step-16 click text=Settings",
+  "fullName": "step-16 click text=Settings",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907804,
+  "stop": 1773546907805
+}

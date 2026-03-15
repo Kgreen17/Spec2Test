@@ -1,0 +1,25 @@
+{
+  "uid": "13771ec2-c9b7-4783-8193-69d3c0fb228b",
+  "name": "step-7 fill DESCRIBE_TARGET",
+  "fullName": "step-7 fill DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907793,
+  "stop": 1773546907794
+}

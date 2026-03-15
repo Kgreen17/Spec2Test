@@ -1,0 +1,25 @@
+{
+  "uid": "cab97c94-e27c-45a8-8729-0941e2704be3",
+  "name": "step-9 assert DESCRIBE_TARGET",
+  "fullName": "step-9 assert DESCRIBE_TARGET",
+  "status": "skipped",
+  "statusDetails": {
+    "message": "Placeholder target; unable to execute"
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773533122624,
+  "stop": 1773533122625
+}

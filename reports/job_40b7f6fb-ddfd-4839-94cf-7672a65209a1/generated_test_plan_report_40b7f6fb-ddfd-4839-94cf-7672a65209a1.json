@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "id": 1,
+      "action": "navigate",
+      "target": "https://webgoat.example.com",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 2,
+      "action": "click",
+      "target": "text=Admin",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 3,
+      "action": "click",
+      "target": "text=Deploy",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 4,
+      "action": "fill",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 5,
+      "action": "select",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Unknown action - not executed"
+    },
+    {
+      "id": 6,
+      "action": "fill",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 7,
+      "action": "fill",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 8,
+      "action": "click",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 9,
+      "action": "wait",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 10,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 11,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 12,
+      "action": "click",
+      "target": "text=Logs",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 13,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 14,
+      "action": "click",
+      "target": "text=Monitoring",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 15,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 16,
+      "action": "click",
+      "target": "text=Settings",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 17,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 18,
+      "action": "click",
+      "target": "text=Logout",
+      "status": "PASS",
+      "reason": null
+    },
+    {
+      "id": 19,
+      "action": "assert",
+      "target": "DESCRIBE_TARGET",
+      "status": "SKIPPED",
+      "reason": "Placeholder target; unable to execute"
+    },
+    {
+      "id": 20,
+      "action": "navigate",
+      "target": "https://webgoat.example.com/login",
+      "status": "PASS",
+      "reason": null
+    }
+  ],
+  "summary": {
+    "pass": 8,
+    "fail": 0,
+    "skipped": 12,
+    "warnings": 0,
+    "total": 20
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "uid": "0e7ef73c-3c31-433b-b0c4-a00133a85219",
+  "name": "step-2 click text=Admin",
+  "fullName": "step-2 click text=Admin",
+  "status": "passed",
+  "statusDetails": {
+    "message": ""
+  },
+  "labels": [
+    {
+      "name": "package",
+      "value": "generated_plan"
+    },
+    {
+      "name": "testClass",
+      "value": "generated_plan"
+    }
+  ],
+  "links": [],
+  "parameters": [],
+  "steps": [],
+  "attachments": [],
+  "start": 1773546907786,
+  "stop": 1773546907787
+}

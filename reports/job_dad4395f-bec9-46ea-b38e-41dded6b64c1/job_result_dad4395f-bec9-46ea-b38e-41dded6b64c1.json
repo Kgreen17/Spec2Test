@@ -1,0 +1,27 @@
+{
+  "job_id": "dad4395f-bec9-46ea-b38e-41dded6b64c1",
+  "status": "SUCCESS",
+  "artifacts": {
+    "embeddings": "reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/out_embeddings_dad4395f-bec9-46ea-b38e-41dded6b64c1.json",
+    "plan": "reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/generated_test_plan_dad4395f-bec9-46ea-b38e-41dded6b64c1.json",
+    "executor_report": "reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/generated_test_plan_report_dad4395f-bec9-46ea-b38e-41dded6b64c1.json",
+    "allure_results": "reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/allure-results"
+  },
+  "logs": [
+    "Starting job dad4395f-bec9-46ea-b38e-41dded6b64c1 for source: /app/uploads/27843a93-4086-47b5-aefa-0411c909d5ac_K-Means Clustering.pdf",
+    "Loading documents...",
+    "Selected document: /app/uploads/27843a93-4086-47b5-aefa-0411c909d5ac_K-Means Clustering.pdf",
+    "Chunking by characters...",
+    "Created 1 chunks",
+    "Embedding backend: dummy (batch_size=100, timeout=30s, retries=2)",
+    "Embedding batch 1-1 (attempt 1)",
+    "Generated 1 embeddings",
+    "Saved embeddings: reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/out_embeddings_dad4395f-bec9-46ea-b38e-41dded6b64c1.json",
+    "Running LLM test planner...",
+    "Wrote test plan: reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/generated_test_plan_dad4395f-bec9-46ea-b38e-41dded6b64c1.json",
+    "Running executor...",
+    "Executor finished, report: reports/job_dad4395f-bec9-46ea-b38e-41dded6b64c1/generated_test_plan_report_dad4395f-bec9-46ea-b38e-41dded6b64c1.json",
+    "Converting executor report to Allure results...",
+    "Allure CLI not available or generation failed; results are in allure-results"
+  ]
+}

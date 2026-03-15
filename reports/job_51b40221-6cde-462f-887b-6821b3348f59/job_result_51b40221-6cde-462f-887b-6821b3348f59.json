@@ -1,0 +1,27 @@
+{
+  "job_id": "51b40221-6cde-462f-887b-6821b3348f59",
+  "status": "SUCCESS",
+  "artifacts": {
+    "embeddings": "reports/job_51b40221-6cde-462f-887b-6821b3348f59/out_embeddings_51b40221-6cde-462f-887b-6821b3348f59.json",
+    "plan": "reports/job_51b40221-6cde-462f-887b-6821b3348f59/generated_test_plan_51b40221-6cde-462f-887b-6821b3348f59.json",
+    "executor_report": "reports/job_51b40221-6cde-462f-887b-6821b3348f59/generated_test_plan_report_51b40221-6cde-462f-887b-6821b3348f59.json",
+    "allure_results": "reports/job_51b40221-6cde-462f-887b-6821b3348f59/allure-results"
+  },
+  "logs": [
+    "Starting job 51b40221-6cde-462f-887b-6821b3348f59 for source: /app/uploads/e712a337-93a5-4282-956e-0d2f31d698b3_Elif Report Summary _ Experian.pdf",
+    "Loading documents...",
+    "Selected document: /app/uploads/e712a337-93a5-4282-956e-0d2f31d698b3_Elif Report Summary _ Experian.pdf",
+    "Chunking by characters...",
+    "Created 1 chunks",
+    "Embedding backend: dummy (batch_size=100, timeout=30s, retries=2)",
+    "Embedding batch 1-1 (attempt 1)",
+    "Generated 1 embeddings",
+    "Saved embeddings: reports/job_51b40221-6cde-462f-887b-6821b3348f59/out_embeddings_51b40221-6cde-462f-887b-6821b3348f59.json",
+    "Running LLM test planner...",
+    "Wrote test plan: reports/job_51b40221-6cde-462f-887b-6821b3348f59/generated_test_plan_51b40221-6cde-462f-887b-6821b3348f59.json",
+    "Running executor...",
+    "Executor finished, report: reports/job_51b40221-6cde-462f-887b-6821b3348f59/generated_test_plan_report_51b40221-6cde-462f-887b-6821b3348f59.json",
+    "Converting executor report to Allure results...",
+    "Allure CLI not available or generation failed; results are in allure-results"
+  ]
+}

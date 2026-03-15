@@ -228,6 +228,32 @@ def generate_test_plan(context: str, objective: str, max_steps: int = 20, model:
     if not context or len(context.strip()) < 20:
         return {'error': 'validation_failed', 'message': 'insufficient_context', 'details': 'Provide more documentation or use --embeddings to retrieve context.'}
 
+    # If the environment requests a mocked LLM or if OpenAI key is missing, return a deterministic mock plan
+    mock_mode = False
+    try:
+        if os.environ.get('MOCK_LLM') in ('1', 'true', 'True'):
+            mock_mode = True
+    except Exception:
+        mock_mode = False
+
+    # If OPENAI_API_KEY is not present, prefer mock mode to avoid runtime OpenAI dependency failures
+    if not os.environ.get('OPENAI_API_KEY'):
+        mock_mode = True
+
+    if mock_mode:
+        # produce a simple plan using the objective and a few generic steps
+        try:
+            test_name = (objective or 'Generated Test').strip()[:80]
+            mock_steps = [
+                {"id": 1, "action": "navigate", "target": "https://example.com"},
+                {"id": 2, "action": "click", "target": "text=Start"},
+                {"id": 3, "action": "assert", "target": "text=Success", "expected": "Success"}
+            ]
+            mock_plan = {"test_name": test_name or 'Generated Test', "description": "Mock test plan (no LLM)", "steps": mock_steps}
+            return {"plan": mock_plan, "source": "mock", "note": "MOCK_LLM or no OPENAI_API_KEY detected"}
+        except Exception as e:
+            return {'error': 'mock_generation_failed', 'message': str(e)}
+
     # Build prompt
     few_shot_text = ''
     for ex in FEW_SHOT_EXAMPLES:
