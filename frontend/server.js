@@ -1,22 +1,37 @@
-const express = require('express');
+const { createServer } = require('http');
+const { parse } = require('url');
+const next = require('next');
 const path = require('path');
-const app = express();
+const fs = require('fs');
+
+const dev = process.env.NODE_ENV !== 'production';
+const app = next({ dev, dir: __dirname });
+const handle = app.getRequestHandler();
 const PORT = process.env.PORT || 3000;
 
-// Serve static files from public directory
-app.use(express.static(path.join(__dirname, 'public')));
+app.prepare().then(() => {
+  createServer((req, res) => {
+    const parsedUrl = parse(req.url, true);
 
-// Health check endpoint
-app.get('/api/health', (req, res) => {
-  res.json({ status: 'ok' });
-});
+    // Serve allure-report static files
+    if (req.url.startsWith('/allure-report/')) {
+      const reportPath = path.join(
+        '/Users/kevingreen/PycharmProjects/Spec2Test',
+        req.url
+      );
 
-// Fallback to index.html for SPA routing
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+      if (fs.existsSync(reportPath)) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
+        res.end(fs.readFileSync(reportPath));
+        return;
+      }
+    }
 
-app.listen(PORT, () => {
-  console.log(`Spec2Test Frontend listening on http://0.0.0.0:${PORT}`);
+    // Handle Next.js routes
+    handle(req, res, parsedUrl);
+  }).listen(PORT, (err) => {
+    if (err) throw err;
+    console.log(`✅ Spec2Test Frontend running on http://0.0.0.0:${PORT}`);
+  });
 });
 
