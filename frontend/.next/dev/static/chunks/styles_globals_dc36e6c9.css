@@ -381,20 +381,12 @@
 @layer components;
 
 @layer utilities {
-  .collapse {
-    visibility: collapse;
-  }
-
   .absolute {
     position: absolute;
   }
 
   .fixed {
     position: fixed;
-  }
-
-  .relative {
-    position: relative;
   }
 
   .static {
